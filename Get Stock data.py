@@ -1,16 +1,3 @@
-"""""
-import yfinance as yf
-
-entercompany= str(input("Enter company ticker symbol: "))
-stock = yf.download(entercompany, start="2022-12-20", end="2022-12-30", group_by="ticker")
-ticker = entercompany
-ticker.info
-
-
-# show sustainability
-#print(cg.sustainability)
-
-"""
 
 import yfinance as yf
 # get last stock price
