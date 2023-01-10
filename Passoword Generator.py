@@ -1,3 +1,4 @@
+#refrence material and the base of the code
 #https://geekflare.com/password-generator-python-code/
 #https://geekflare.com/handle-files-in-python/
 
@@ -11,10 +12,11 @@ special_char = string.punctuation
 Secured_for = string
 alphabet = letters + digits + special_char
 
+# the length of the password, this can be a user input, but 15 characters is secure
 pwd_length =15
 pwd = ''
 
-#color codes
+#color codes to changed text outputs
 class color:
    PURPLE = '\033[95m'
    CYAN = '\033[96m'
@@ -28,13 +30,16 @@ class color:
    END = '\033[0m'
 
 
-#Main function
+#Main function to create the password and displays it. The passwords is in red so it stands out, this can be changed using the color codes above
 for i in range(pwd_length):
     pwd += ''.join(secrets.choice(alphabet))
 print ("Your Password is: ", color.RED + pwd + '\033[0m')
 print("The password has been copied to the clipboard.")
+
+#Copies the password to your clipboard
 pyperclip.copy(pwd)
 
+#Creates a file called Python Generated Passwords and paste the passowrd and what it secures in a text file
 with open('Python Generated Passwords.txt', 'a') as file:
     Secured_for = input("What is this password for: ")
     name = [Secured_for]
@@ -43,7 +48,5 @@ with open('Python Generated Passwords.txt', 'a') as file:
     file.writelines("% s\n" % data for data in name)
     file.writelines("% s\n" % data for data in books)
 
-if(str(Secured_for) =="Overide 1A"):
-    print("I understand what to do")
-    lines=file.readline()
-    lines=lines[:-2]
+
+ 
