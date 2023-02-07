@@ -16,7 +16,7 @@ for ticker in tickers:
     print("Latest Price: "+ company_name ,"is " + str(last_quote)+ " as of", today)
     quote = str(last_quote)
 
-symbol = yf.Ticker("msft").info
+symbol = yf.Ticker(entercompany).info
 pe = symbol["trailingPE"]
 fowardPe=symbol["forwardPE"]
 print("Current P/E: ",round(pe,2))
